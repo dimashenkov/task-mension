@@ -9,7 +9,9 @@ pipeline {
     stages {
 
         stage('Clean')
-            step([$class: 'WsCleanup'])
+            steps {
+                cleanWs()
+            }
     
         stage('Clone repository') {
             steps {
