@@ -51,6 +51,7 @@ pipeline {
             echo "Success or not - Delete generated images."
             sh "docker image rm img-${APP_NAME}-app"
             sh "docker image rm img-${APP_NAME}-test"
+            junit 'build/reports/**/*.xml'
         }
         success {
             echo "Build succeed"
