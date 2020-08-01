@@ -4,7 +4,7 @@ pipeline {
 
     environment {
         APP_NAME = "jsweb"
-        def errors = []
+        errors = []
     }
 
     stages {
