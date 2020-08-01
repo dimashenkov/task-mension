@@ -7,7 +7,7 @@ RUN apk update && \
         wget
 
 # Copy application tests
-#COPY jsweb/test /tmp/test
+COPY jsweb/tests /tmp/tests
 
 # Make container run forever (until manually stopped)
 CMD tail -f /dev/null
