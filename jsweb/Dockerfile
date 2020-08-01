@@ -21,4 +21,4 @@ RUN npm install
 EXPOSE 8088
 CMD [ "node", "server.js" ]
 
-USER node
+#USER node
