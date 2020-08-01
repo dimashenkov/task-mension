@@ -19,6 +19,9 @@ services:
       - jsweb-app
     networks:
       - test_network
+    volumes:
+      - /jsweb/tmp:/tmp/test
+
 
 networks:
   test_network:
