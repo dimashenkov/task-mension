@@ -26,7 +26,7 @@ fi
 echo -e ""
 
 echo -e "================================================================================"
-echo -e "=== Test results"
+echo -e "=== Test results==="
 
 echo -e "tests OK:   $countOK"
 echo -e "tests FAIL: $countFail"
