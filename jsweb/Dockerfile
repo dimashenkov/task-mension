@@ -1,9 +1,9 @@
 FROM node:latest
 
 # Add a new user "john" with user id 8877
-RUN useradd -u 8877 APP_USER
+#RUN useradd -u 8877 APP_USER
 # Change to non-root privilege
-USER APP_USER
+#USER APP_USER
 
 # Create app directory
 WORKDIR /usr/src/app
