@@ -4,8 +4,9 @@ pipeline {
 
     environment {
         APP_NAME = "jsweb"
+        errors = []
     }
-    def errors = []
+
     stages {
     
         stage('Clone repository') {
