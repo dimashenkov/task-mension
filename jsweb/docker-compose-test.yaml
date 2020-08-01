@@ -20,7 +20,7 @@ services:
     networks:
       - test_network
     volumes:
-      - /jsweb/tmp:/tmp/test
+      - /jsweb/test:/tmp/test
 
 
 networks:
