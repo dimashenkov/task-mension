@@ -29,9 +29,9 @@ pipeline {
         stage('Integration tests') {
             steps {
                 sh "docker-compose -f jsweb/docker-compose-test.yaml up -d --force-recreate"
-                sh "docker exec ${APP_NAME}-test /tmp/tests/apptest.sh"
-                sh "docker exec ${APP_NAME}-app /tmp/tests/test_priv.sh"
-                sh "docker exec ${APP_NAME}-app /tmp/tests/test_kernel_v.sh"
+                sh "docker exec ${APP_NAME}-test /tmp/tests/apptest.sh >> report.txt"
+                sh "docker exec ${APP_NAME}-app /tmp/tests/test_priv.sh >> report.txt" 
+                sh "docker exec ${APP_NAME}-app /tmp/tests/test_kernel_v.sh >> report.txt"
                 sh "docker-compose -f jsweb/docker-compose-test.yaml down -v"
             }
         }
@@ -51,7 +51,7 @@ pipeline {
             echo "Success or not - Delete generated images."
             sh "docker image rm img-${APP_NAME}-app"
             sh "docker image rm img-${APP_NAME}-test"
-            junit 'build/reports/**/*.xml'
+            archiveArtifacts artifacts: 'report.txt', fingerprint: true
         }
         success {
             echo "Build succeed"
