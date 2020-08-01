@@ -4,11 +4,11 @@ if [[ $? -eq 0 ]]; then
     PRIVILEGED=true
     # clean the dummy0 link
     ip link delete dummy0 >/dev/null
-    echo echo -e "=== Test result container privileged mode==="
-    echo privileged
+    echo -e "=== Test result container privileged mode==="
+    echo This container is in privileged mode !!!
     exit 1
 else
-	echo echo -e "=== Test result container privileged mode==="
-    echo not privileged
+	echo -e "=== Test result container privileged mode==="
+    echo This container is not privileged mode
     PRIVILEGED=false
 fi
