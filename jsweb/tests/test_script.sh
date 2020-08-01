@@ -1,2 +1,5 @@
 #!/bin/bash
-run-parts /jsweb/tests
+arr=()
+for f in /tmp/tests/*.sh; do  
+  bash "$f" -H 
+done
