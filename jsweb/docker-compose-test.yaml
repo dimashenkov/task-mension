@@ -1,0 +1,24 @@
+version: '3'
+
+services:
+
+  jsweb-app:
+    container_name: jsweb-app
+    hostname: jsweb-app
+    image: img-jsweb-app
+    restart: unless-stopped
+    networks:
+      - test_network
+
+  jsweb-test:
+    container_name: jsweb-test
+    hostname: jsweb-test
+    image: img-jsweb-test
+    restart: unless-stopped
+    depends_on:
+      - jsweb-app
+    networks:
+      - test_network
+
+networks:
+  test_network:

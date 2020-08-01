@@ -1,0 +1,13 @@
+FROM alpine:latest
+
+# Install testing tools
+RUN apk update && \
+    apk add \
+        curl \
+        wget
+
+# Copy application tests
+COPY jsweb/test /tmp/test
+
+# Make container run forever (until manually stopped)
+CMD tail -f /dev/null
