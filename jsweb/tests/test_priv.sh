@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 ip link add dummy0 type dummy >/dev/null
 if [[ $? -eq 0 ]]; then
     PRIVILEGED=true
