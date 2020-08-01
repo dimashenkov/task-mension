@@ -34,6 +34,13 @@ pipeline {
                 sh "docker exec ${APP_NAME}-test /tmp/tests/apptest.sh >> report.txt"
                 sh "docker exec ${APP_NAME}-app /tmp/tests/test_priv.sh >> report.txt" 
                 sh "docker exec ${APP_NAME}-app /tmp/tests/test_kernel_v.sh >> report.txt"
+                script {
+                  try {
+                      sh "docker exec ${APP_NAME}-app /tmp/tests/test_priv.sh"
+                  } catch (Exception e) {
+                      sh 'echo Handle the exception!'
+                  }
+                }                
                 sh "docker-compose -f jsweb/docker-compose-test.yaml down -v"
             }
         }
