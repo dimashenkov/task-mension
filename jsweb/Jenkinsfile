@@ -7,6 +7,9 @@ pipeline {
     }
     
     stages {
+
+        stage('Clean')
+            step([$class: 'WsCleanup'])
     
         stage('Clone repository') {
             steps {
@@ -26,7 +29,7 @@ pipeline {
             }
         }
         
-        stage('Integration tests') {
+        stage('Security tests') {
             steps {
                 sh "docker-compose -f jsweb/docker-compose-test.yaml up -d --force-recreate"
                 sh "docker exec ${APP_NAME}-test /tmp/tests/apptest.sh >> report.txt"
