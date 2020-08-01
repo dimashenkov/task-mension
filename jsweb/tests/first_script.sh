@@ -1,6 +1,8 @@
 #!/bin/bash
 errors=()
-for f in /tmp/tests/test*; do  
+tests=()
+for f in /tmp/tests/test*; do
+  tests+=("$f")  
   bash "$f" -H
   if [ $? -eq 0 ]; then
       echo OK
@@ -16,6 +18,6 @@ if [ ${#errors[@]} -eq 0 ]; then
     echo "No errors, hooray"
 else
     echo "Oops, something went wrong..."
-    echo "${#errors[@]} ERRORS"
+    echo "${#errors[@]} Failed from ${#tests[@]} tests"
     exit 1
 fi
