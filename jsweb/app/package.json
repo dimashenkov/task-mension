@@ -2,7 +2,7 @@
   "name": "docker_web_app",
   "version": "1.0.0",
   "description": "Work on testing with Docker&Jenkins",
-  "author": "Peter Tsonkov <peter_tsonkov@epam.com>",
+  "author": "Dimitar Shenkov <dimashenkov@abv.bg>",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
