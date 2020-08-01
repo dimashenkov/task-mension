@@ -29,7 +29,7 @@ pipeline {
         stage('Integration tests') {
             steps {
                 sh "docker-compose -f jsweb/docker-compose-test.yaml up -d --force-recreate"
-                sh "docker exec ${APP_NAME}-test /tmp/test/apptest.sh"
+                sh "docker exec ${APP_NAME}-test /tmp/tests/apptest.sh"
                 sh "docker-compose -f jsweb/docker-compose-test.yaml down -v"
             }
         }
