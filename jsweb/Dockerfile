@@ -14,8 +14,11 @@ COPY jsweb/app .
 # Copy application tests
 COPY jsweb/tests /tmp/tests
 
+
 # Install app dependencies from package.json
 RUN npm install
 
 EXPOSE 8088
 CMD [ "node", "server.js" ]
+
+USER node
