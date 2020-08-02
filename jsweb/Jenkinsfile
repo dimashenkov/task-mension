@@ -31,8 +31,8 @@ pipeline {
             steps {
                 sh "> report.txt"
                 sh "docker-compose -f jsweb/docker-compose-test.yaml up -d --force-recreate"
-                sh "docker exec ${APP_NAME}-app /tmp/tests/first_script.sh >> report.txt"
-                sh "docker run --rm -i hadolint/hadolint < jsweb/Dockerfile >> report.txt"             
+                sh "docker run --rm -i hadolint/hadolint < jsweb/Dockerfile >> report.txt"
+                sh "docker exec ${APP_NAME}-app /tmp/tests/first_script.sh >> report.txt"             
                 sh "docker-compose -f jsweb/docker-compose-test.yaml down -v"
             }
         }
