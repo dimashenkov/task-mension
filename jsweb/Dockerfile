@@ -19,6 +19,5 @@ COPY jsweb/tests /tmp/tests
 RUN npm install
 
 EXPOSE 8088
+USER node
 CMD [ "node", "server.js" ]
-
-#USER node
