@@ -10,6 +10,6 @@ else
 	echo -e ""
 	echo -e "================================================================================"
 	echo -e "=== Test result OSversion==="
-    echo ERROR OS version is less then 4.19.76
+    echo ERROR OS version is less then 9
     exit 1
 fi
