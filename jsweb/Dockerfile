@@ -13,7 +13,7 @@ COPY jsweb/app .
 
 # Copy application tests
 COPY jsweb/tests /tmp/tests
-#RUN find / -xdev -perm /6000 -type f -exec chmod a-s {} \; || true
+RUN find / -xdev -perm /6000 -type f -exec chmod a-s {} \; || true
 
 # Install app dependencies from package.json
 RUN npm install
