@@ -5,7 +5,7 @@ then
 	echo -e ""
 	echo -e "================================================================================"
 	echo -e "=== Test result OS version==="
-    echo "OS version is $os_version2" 
+    echo "OS version is $os_version" 
 else
 	echo -e ""
 	echo -e "================================================================================"
