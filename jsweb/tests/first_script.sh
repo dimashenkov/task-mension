@@ -17,6 +17,8 @@ if [ ${#errors[@]} -eq 0 ]; then
     echo -e "===All Test results==="
     echo "No errors, hooray"
 else
+    echo -e ""
+    echo -e "================================================================================"
     echo "Oops, something went wrong..."
     echo "${#errors[@]} Failed from ${#tests[@]} tests"
     exit 1

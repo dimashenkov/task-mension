@@ -12,6 +12,6 @@ else
 	echo -e ""
 	echo -e "================================================================================"
 	echo -e "=== Test result kernel version==="
-    echo Kernel version is less then 4.19.76
+    echo ERROR Kernel version is less then 4.19.76
     exit 1
 fi

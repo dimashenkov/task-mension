@@ -7,7 +7,7 @@ if [[ $? -eq 0 ]]; then
     echo -e ""
     echo -e "================================================================================"
     echo -e "=== Test result container privileged mode==="
-    echo This container is in privileged mode !!!
+    echo ERROR This container is in privileged mode !!!
     exit 1
 else
 	echo -e ""
