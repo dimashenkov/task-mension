@@ -6,7 +6,7 @@ then
 	echo -e ""
 	echo -e "================================================================================"
 	echo -e "=== Test result kernel version==="
-	echo "Kernel version is bigger then 4.18" 
+	echo "Kernel version is eq/bigger then 4.18" 
     echo "Kernel version is $kernel_version2" 
 else
 	echo -e ""
