@@ -1,7 +1,7 @@
 #!/bin/bash
 kernel_version=`uname -a|awk '{print $3}' | sed 's/[^0-9]*//g'`
 kernel_version2=`uname -a|awk '{print $3}' | cut -f1 -d"-"`
-target_kernel_version=419761
+target_kernel_version=41976
 if [ $kernel_version -ge $target_kernel_version ]
 then
 	echo -e ""
